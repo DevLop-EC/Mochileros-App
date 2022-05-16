@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mochileros2App.MainPage">
+
+    <StackLayout Padding="10"  VerticalOptions="Center" BackgroundColor="Crimson">
+        <Label Text="Ingrese su correo" FontSize="Large"/>
+        <Entry x:Name="emailEntry"  Keyboard="Email"/>
+        <Label Text="Ingrese su contraseña" FontSize="Large"/>
+        <Entry x:Name="passwordEntry" Keyboard="Text" IsPassword="True"/>
+        <Button Text="Aceptar" BackgroundColor="Blue" TextColor="White" Clicked="Button_Clicked"/>
+    </StackLayout>
+
+</ContentPage>
