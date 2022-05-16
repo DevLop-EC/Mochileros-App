@@ -15,24 +15,27 @@ namespace Mochileros2App
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            
+
             string email = emailEntry.Text;
             string password = passwordEntry.Text;
-            if(string.IsNullOrEmpty(email)|| password == "")
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
-                DisplayAlert("Advertencia", "Acceso denegado", "Ok");
+                await DisplayAlert("Advertencia", "Debe introducir el correo y contraseña", "Ok");
+            }
+            else if (email == "clopez@gmail.com" && password == "1234")
+            {
+                await Navigation.PushAsync(new HomePage());
             }
             else
             {
-                // DisplayAlert("Exito", "Ingreso exitoso", "Ok");
-                Navigation.PushAsync(new HomePage());
+                await DisplayAlert("Advertencia", "Correo o contraseña incorrectos", "Ok");
             }
 
 
 
-            
+
         }
     }
 }
