@@ -2,17 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mochileros2App.MainPage"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             Visual="Material">
 
     <StackLayout Padding="10" VerticalOptions="Center" BackgroundColor="Transparent">
         <Label Text="Mochileros App" HorizontalOptions="Center" Margin="10" FontSize="30" FontAttributes="Bold" TextColor="#3B71F1" />
         <Image Source="https://i.ibb.co/XCx3m0R/airplane.png" Margin="20" />
         <Frame CornerRadius="20">
             <StackLayout>
-                <Label Text="Ingrese su correo" FontSize="Large"/>
-                <Entry x:Name="emailEntry"  Keyboard="Email"/>
-                <Label Text="Ingrese su contraseña" FontSize="Large"/>
-                <Entry x:Name="passwordEntry" Keyboard="Text" IsPassword="True"  />
+                <Label Text="Correo electronico" FontSize="Large"/>
+                <Entry x:Name="emailEntry" Placeholder="Ingrese su correo" Keyboard="Email"/>
+                <Label Text="Contraseña" FontSize="Large"/>
+                <Entry x:Name="passwordEntry" Placeholder="Ingrese su contraseña" Keyboard="Text" IsPassword="True"  />
                 <Button Text="Ingresar" BackgroundColor="#3B71F1" TextColor="White" Clicked="Button_Clicked"/>
             </StackLayout>
         </Frame>

@@ -16,5 +16,10 @@ namespace Mochileros2App
         {
             InitializeComponent();
         }
+
+        private async void logout_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
     }
 }
