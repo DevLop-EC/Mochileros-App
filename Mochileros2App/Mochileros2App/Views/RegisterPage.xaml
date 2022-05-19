@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mochileros2App.Views.RegisterPage">
+
+    <StackLayout Padding="10" VerticalOptions="Center" BackgroundColor="Transparent">
+        <Label Text="Mochileros App" HorizontalOptions="Center" Margin="10" FontSize="30" FontAttributes="Bold" TextColor="LightSlateGray" />
+
+        <Frame CornerRadius="20">
+            <StackLayout>
+                <Label Text="Nombre" HorizontalOptions="Center" Margin="10" FontSize="20" FontAttributes="Bold" TextColor="LightSlateGray" />
+                <Entry Text="Ingrese su nombre" x:Name="nameEntry" Placeholder="Nombre" Margin="10" FontSize="20" FontAttributes="Bold" TextColor="LightSlateGray" />
+                <Label Text="Apellido" HorizontalOptions="Center" Margin="10" FontSize="20" FontAttributes="Bold" TextColor="LightSlateGray" />
+                <Entry Text="Ingrese su apellido" x:Name="lastNameEntry" Placeholder="Apellido" Margin="10" FontSize="20" FontAttributes="Bold" TextColor="LightSlateGray" />
+                <Label Text="Correo Electronico" FontSize="Large"/>
+                <Entry x:Name="emailEntry" Placeholder="Ingrese el correo" Keyboard="Email"/>
+                <Label Text="Telefono" FontSize="Large"/>
+                <Entry x:Name="phoneEntry" Placeholder="Ingrese el telefono" Keyboard="Numeric"/>
+                <Label Text="Contraseña" FontSize="Large"/>
+                <Entry x:Name="passwordEntry" Placeholder="Ingrese su contraseña" Keyboard="Text" IsPassword="True"  />
+                <Button Text="Registrar" BackgroundColor="{StaticResource ButtonColor}" TextColor="{StaticResource TextColorApp}" x:Name="registerSubmit" Clicked="registerSubmit_Clicked"/>
+
+
+            </StackLayout>
+
+        </Frame>
+
+
+    </StackLayout>
+</ContentPage>

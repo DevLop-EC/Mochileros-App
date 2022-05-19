@@ -17,18 +17,24 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<EmbeddedResource Update="HistoryPage.xaml">
+		<EmbeddedResource Update="Views\HistoryPage.xaml">
 			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 		</EmbeddedResource>
-		<EmbeddedResource Update="HomePage.xaml">
+		<EmbeddedResource Update="Views\HomePage.xaml">
 			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 		</EmbeddedResource>
-		<EmbeddedResource Update="MapPage.xaml">
+		<EmbeddedResource Update="Views\MapPage.xaml">
 			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Views\OpinionPage.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Views\RegisterPage.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 		</EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Models\" />
+		<Folder Include="ViewModels\" />
 	</ItemGroup>
 </Project>

@@ -4,5 +4,13 @@
              x:Class="Mochileros2App.App">
     <Application.Resources>
 
+
+        <!-- Colors -->
+        <Color x:Key="AppBackgroundColor">White</Color>
+        <Color x:Key="NavigationBarColor">#3B71F1</Color>
+        <Color x:Key="NavigationBarTextColor">White</Color>
+        <Color x:Key="ButtonColor">#3B71F1</Color>
+        <Color x:Key="TextColorApp">White</Color>
+
     </Application.Resources>
 </Application>

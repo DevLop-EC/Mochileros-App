@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mochileros2App.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             Visual="Material"
+            >
+
+    <StackLayout Padding="10" BackgroundColor="Transparent">
+        <Label Text="Mochileros App" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="LightSlateGray" />
+        <Image Source="logo.png" WidthRequest="300" />
+        <Frame CornerRadius="20" Margin="0" Padding="10">
+            <StackLayout>
+                <Label Text="Correo Electronico" FontSize="Large"/>
+                <Entry x:Name="emailEntry" Placeholder="Ingrese el correo" Keyboard="Email"/>
+                <Label Text="Contraseña" FontSize="Large"/>
+                <Entry x:Name="passwordEntry" Placeholder="Ingrese su contraseña" Keyboard="Text" IsPassword="True"  />
+                <Button Text="Ingresar" BackgroundColor="{StaticResource ButtonColor}" TextColor="{StaticResource TextColorApp}" x:Name="login" Clicked="login_Clicked"/>
+                <Label Text="¿No tienes cuenta?" FontSize="Medium" TextColor="LightSlateGray"  />
+                <Button Text="Registrate" BackgroundColor="{StaticResource ButtonColor}" TextColor="{StaticResource TextColorApp}" x:Name="register" Clicked="register_Clicked"/>
+
+            </StackLayout>
+
+        </Frame>
+
+
+    </StackLayout>
+
+
+</ContentPage>

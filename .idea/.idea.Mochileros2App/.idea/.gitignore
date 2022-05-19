@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Default ignored files
 /shelf/
 /workspace.xml
@@ -6,6 +7,16 @@
 /contentModel.xml
 /projectSettingsUpdater.xml
 /.idea.Mochileros2App.iml
+=======
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/.idea.Mochileros2App.iml
+/projectSettingsUpdater.xml
+/contentModel.xml
+/modules.xml
+>>>>>>> f84b1560df37dabf2d3cd750f54820ae514b14e9
 # Editor-based HTTP Client requests
 /httpRequests/
 # Datasource local storage ignored files
