@@ -3,18 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mochileros2App.MainPage"
              NavigationPage.HasNavigationBar="False"
-             Visual="Material">
+             Visual="Material"
+            >
 
     <StackLayout Padding="10" VerticalOptions="Center" BackgroundColor="Transparent">
-        <Label Text="Mochileros App" HorizontalOptions="Center" Margin="10" FontSize="30" FontAttributes="Bold" TextColor="#3B71F1" />
-        <Image Source="https://i.ibb.co/XCx3m0R/airplane.png" Margin="20" />
+        <Label Text="Mochileros App" HorizontalOptions="Center" Margin="10" FontSize="30" FontAttributes="Bold" TextColor="LightSlateGray" />
+        <Image Source="logo.png" Margin="50" />
         <Frame CornerRadius="20">
             <StackLayout>
                 <Label Text="Correo Electronico" FontSize="Large"/>
                 <Entry x:Name="emailEntry" Placeholder="Ingrese el correo" Keyboard="Email"/>
                 <Label Text="Contraseña" FontSize="Large"/>
                 <Entry x:Name="passwordEntry" Placeholder="Ingrese su contraseña" Keyboard="Text" IsPassword="True"  />
-                <Button Text="Ingresar" BackgroundColor="#3B71F1" TextColor="White" Clicked="Button_Clicked"/>
+                <Button Text="Ingresar" BackgroundColor="{StaticResource ButtonColor}" TextColor="{StaticResource TextColorApp}" Clicked="Button_Clicked"/>
             </StackLayout>
         </Frame>
 
