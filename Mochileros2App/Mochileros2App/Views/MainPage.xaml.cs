@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mochileros2App.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -15,26 +16,34 @@ namespace Mochileros2App
             InitializeComponent();
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+
+        private async void register_Clicked(object sender, EventArgs e)
         {
 
-            string email = emailEntry.Text;
-            string password = passwordEntry.Text;
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            await Navigation.PushAsync(new RegisterPage());
+
+
+        }
+
+        private async void login_Clicked(object sender, EventArgs e)
+        {
+            // get user and pass
+            var email = emailEntry.Text;
+            var password = passwordEntry.Text;
+
+            // check if user and pass are in the database
+            var userExists = await App.Context.LoginUserAsync(email, password);
+
+            if (userExists)
             {
-                await DisplayAlert("Advertencia", "Debe introducir el correo y contraseña", "Ok");
-            }
-            else if (email == "clopez@gmail.com" && password == "1234")
-            {
+                // login
                 await Navigation.PushAsync(new HomePage());
             }
             else
             {
-                await DisplayAlert("Advertencia", "Correo o contraseña incorrectos", "Ok");
+                // show error
+                await DisplayAlert("Error", "Usuario o contraseña incorrectos", "OK");
             }
-
-
-
 
         }
     }
