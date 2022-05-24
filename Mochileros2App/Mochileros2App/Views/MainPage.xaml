@@ -8,15 +8,16 @@
 
     <StackLayout Padding="10" BackgroundColor="Transparent">
         <Label Text="Mochileros App" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="LightSlateGray" />
-        <Image Source="logo.png" WidthRequest="300" />
-        <Frame CornerRadius="20" Margin="0" Padding="10">
+        <Image Source="logo.png" WidthRequest="250" Margin="15"/>
+        <Frame CornerRadius="20" Margin="0" Padding="20">
             <StackLayout>
-                <Label Text="Correo Electronico" FontSize="Large"/>
-                <Entry x:Name="emailEntry" Placeholder="Ingrese el correo" Keyboard="Email"/>
-                <Label Text="Contraseña" FontSize="Large"/>
-                <Entry x:Name="passwordEntry" Placeholder="Ingrese su contraseña" Keyboard="Text" IsPassword="True"  />
+                <Label Text="Correo Electronico" FontSize="Medium"/>
+                <Entry x:Name="emailEntry" Placeholder="Ingrese el correo" Keyboard="Email" TextColor="LightSlateGray" FontSize="Small" />
+
+                <Label Text="Contraseña" FontSize="Medium"/>
+                <Entry x:Name="passwordEntry" Placeholder="Ingrese su contraseña" TextColor="LightSlateGray" Keyboard="Text" IsPassword="True" FontSize="Small" />
                 <Button Text="Ingresar" BackgroundColor="{StaticResource ButtonColor}" TextColor="{StaticResource TextColorApp}" x:Name="login" Clicked="login_Clicked"/>
-                <Label Text="¿No tienes cuenta?" FontSize="Medium" TextColor="LightSlateGray"  />
+                <Label Text="¿No tienes cuenta?" FontSize="Micro" TextColor="LightSlateGray"  />
                 <Button Text="Registrate" BackgroundColor="{StaticResource ButtonColor}" TextColor="{StaticResource TextColorApp}" x:Name="register" Clicked="register_Clicked"/>
 
             </StackLayout>

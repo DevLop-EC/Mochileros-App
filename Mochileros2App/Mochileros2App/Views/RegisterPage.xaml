@@ -4,20 +4,20 @@
              x:Class="Mochileros2App.Views.RegisterPage">
 
     <StackLayout Padding="10" VerticalOptions="Center" BackgroundColor="Transparent">
-        <Label Text="Mochileros App" HorizontalOptions="Center" Margin="10" FontSize="30" FontAttributes="Bold" TextColor="LightSlateGray" />
+        <Label Text="Registrate en nuestra app" HorizontalOptions="Center" Margin="10" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource ButtonColor}" />
 
         <Frame CornerRadius="20">
             <StackLayout>
-                <Label Text="Nombre" HorizontalOptions="Center" Margin="10" FontSize="20" FontAttributes="Bold" TextColor="LightSlateGray" />
-                <Entry Text="Ingrese su nombre" x:Name="nameEntry" Placeholder="Nombre" Margin="10" FontSize="20" FontAttributes="Bold" TextColor="LightSlateGray" />
-                <Label Text="Apellido" HorizontalOptions="Center" Margin="10" FontSize="20" FontAttributes="Bold" TextColor="LightSlateGray" />
-                <Entry Text="Ingrese su apellido" x:Name="lastNameEntry" Placeholder="Apellido" Margin="10" FontSize="20" FontAttributes="Bold" TextColor="LightSlateGray" />
-                <Label Text="Correo Electronico" FontSize="Large"/>
-                <Entry x:Name="emailEntry" Placeholder="Ingrese el correo" Keyboard="Email"/>
-                <Label Text="Telefono" FontSize="Large"/>
-                <Entry x:Name="phoneEntry" Placeholder="Ingrese el telefono" Keyboard="Numeric"/>
-                <Label Text="Contraseña" FontSize="Large"/>
-                <Entry x:Name="passwordEntry" Placeholder="Ingrese su contraseña" Keyboard="Text" IsPassword="True"  />
+                <Label Text="Nombre" FontSize="15" FontAttributes="Bold" TextColor="LightSlateGray" />
+                <Entry Placeholder="Ingrese su nombre" x:Name="nameEntry"  FontSize="15"  TextColor="LightSlateGray" />
+                <Label Text="Apellido" FontSize="15" FontAttributes="Bold" TextColor="LightSlateGray" />
+                <Entry x:Name="lastNameEntry" Placeholder="Ingrese su apellido" FontSize="15" TextColor="LightSlateGray" />
+                <Label Text="Correo Electronico" FontSize="15" TextColor="LightSlateGray" FontAttributes="Bold"/>
+                <Entry x:Name="emailEntry" Placeholder="Ingrese el correo" Keyboard="Email" TextColor="LightSlateGray" FontSize="15"/>
+                <Label Text="Telefono" FontSize="15" FontAttributes="Bold" TextColor="LightSlateGray"/>
+                <Entry x:Name="phoneEntry" Placeholder="Ingrese el telefono" Keyboard="Numeric" TextColor="LightSlateGray" FontSize="15"/>
+                <Label Text="Contraseña" FontSize="15" TextColor="LightSlateGray" FontAttributes="Bold"/>
+                <Entry x:Name="passwordEntry" Placeholder="Ingrese su contraseña" Keyboard="Text" IsPassword="True" FontSize="15" />
                 <Button Text="Registrar" BackgroundColor="{StaticResource ButtonColor}" TextColor="{StaticResource TextColorApp}" x:Name="registerSubmit" Clicked="registerSubmit_Clicked"/>
 
 
