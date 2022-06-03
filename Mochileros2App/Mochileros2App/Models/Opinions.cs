@@ -13,7 +13,6 @@ namespace Mochileros2App.Models
         [MaxLength(250)]
         public string Opinion { get; set; }
 
-        public int IdUser { get; set; }
         public DateTime Date { get; set; }
     }
 }

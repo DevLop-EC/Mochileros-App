@@ -7,10 +7,11 @@
 
         <!-- Colors -->
         <Color x:Key="AppBackgroundColor">White</Color>
+        <Color x:Key="AppSecondaryColor">#1C375C</Color>
         <Color x:Key="NavigationBarColor">#3B71F1</Color>
         <Color x:Key="NavigationBarTextColor">White</Color>
         <Color x:Key="ButtonColor">#3B71F1</Color>
-        <Color x:Key="TextColorApp">White</Color>
+        <Color x:Key="TextColorApp">#1C375C</Color>
 
     </Application.Resources>
 </Application>

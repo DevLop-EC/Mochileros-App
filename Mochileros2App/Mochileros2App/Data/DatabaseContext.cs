@@ -9,12 +9,13 @@ namespace Mochileros2App.Data
 {
     public class DatabaseContext
     {
-        public SQLiteAsyncConnection Connection { get; set; }
+        private readonly SQLiteAsyncConnection Connection;
+
 
         public DatabaseContext(string path)
         {
             Connection = new SQLiteAsyncConnection(path);
-            Connection.CreateTableAsync<Users>().Wait();
+            Connection.CreateTablesAsync<Users, Opinions>().Wait();
 
         }
 
@@ -32,6 +33,28 @@ namespace Mochileros2App.Data
                 return true;
             }
             return false;
+        }
+
+        public async Task<int> InsertOpinionAsync(Opinions opinions)
+        {
+            if (opinions is null)
+            {
+                throw new ArgumentNullException(nameof(opinions));
+            }
+
+            return await Connection.InsertAsync(opinions);
+        }
+
+        public async Task<List<Opinions>> GetOpinionsAsync()
+        {
+            var opinions = Connection.Table<Opinions>().ToListAsync();
+
+            if (opinions is null)
+            {
+                throw new ArgumentNullException(nameof(opinions));
+            }
+
+            return await opinions;
         }
     }
 }

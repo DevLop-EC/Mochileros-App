@@ -3,16 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mochileros2App.OpinionPage"
              Title="Opiniones">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Agregar"
-                 Order="Primary"
-                 Priority="0" />
-    </ContentPage.ToolbarItems>
+
+
+    <!--Form to add opinions-->
+
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Ingrese su comentario"
+                 />
+            <Entry x:Name="opinionEntry"/>
+            <Button Text="Guardar" Clicked="AddOpinion_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
+
 </ContentPage>
