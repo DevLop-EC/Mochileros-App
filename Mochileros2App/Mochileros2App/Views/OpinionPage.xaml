@@ -8,9 +8,8 @@
     <!--Form to add opinions-->
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Ingrese su comentario"
-                 />
+        <StackLayout Margin="20">
+            <Label Text="Ingrese su comentario" FontSize="14"/>
             <Entry x:Name="opinionEntry"/>
             <Button Text="Guardar" Clicked="AddOpinion_Clicked"/>
         </StackLayout>
