@@ -2,30 +2,54 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mochileros2App.MainPage"
+             Shell.NavBarIsVisible="False"
              NavigationPage.HasNavigationBar="False"
-             Visual="Material"
-            >
-
-    <StackLayout Padding="10" BackgroundColor="Transparent">
-        <Label Text="Mochileros App" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="LightSlateGray" />
-        <Image Source="logo.png" WidthRequest="250" Margin="15"/>
-        <Frame CornerRadius="20" Margin="0" Padding="20">
-            <StackLayout>
-                <Label Text="Correo Electronico" FontSize="Medium"/>
-                <Entry x:Name="emailEntry" Placeholder="Ingrese el correo" Keyboard="Email" TextColor="LightSlateGray" FontSize="Small" />
-
-                <Label Text="Contraseña" FontSize="Medium"/>
-                <Entry x:Name="passwordEntry" Placeholder="Ingrese su contraseña" TextColor="LightSlateGray" Keyboard="Text" IsPassword="True" FontSize="Small" />
-                <Button Text="Ingresar" BackgroundColor="{StaticResource ButtonColor}" TextColor="{StaticResource TextColorApp}" x:Name="login" Clicked="login_Clicked"/>
-                <Label Text="¿No tienes cuenta?" FontSize="Micro" TextColor="LightSlateGray"  />
-                <Button Text="Registrate" BackgroundColor="{StaticResource ButtonColor}" TextColor="{StaticResource TextColorApp}" x:Name="register" Clicked="register_Clicked"/>
-
-            </StackLayout>
-
-        </Frame>
+             BackgroundColor="{StaticResource AppSecondaryColor}"
+             Visual="Material">
 
 
-    </StackLayout>
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Margin="0,30" Source="logo.png" Aspect="AspectFit" HeightRequest="180" WidthRequest="80"></Image>
+            <Frame Grid.Row="1" Margin="0,0,0,-40" BorderColor="{StaticResource AppSecondaryColor}" HasShadow="True"  CornerRadius="50" HeightRequest="700">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20,50,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"  Text="Mochileros App" FontSize="24" FontAttributes="Bold" TextColor="#1C375C" HorizontalOptions="CenterAndExpand"></Label>
+                    <Label Grid.Row="1" Margin="0,-15,0,0" Text="Inicia sesion con tu cuenta" TextColor="{StaticResource AppSecondaryColor}"  HorizontalOptions="CenterAndExpand"></Label>
+                    <Entry Grid.Row="2" x:Name="emailEntry" Placeholder="Ingresa tu correo" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Entry Grid.Row="3" x:Name="passwordEntry" Placeholder="Ingresa tu contraseña" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Button Grid.Row="4" Text="Iniciar sesion" BackgroundColor="{StaticResource TextColorApp}" CornerRadius="20" Clicked="login_Clicked"/>
+                    <Label Grid.Row="5" Text="o incia con" HorizontalOptions="CenterAndExpand"></Label>
+                    <StackLayout Grid.Row="6" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="40">
+                        <Image Source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo626DNKJxdHM-VNRD0m7x_8Jim-r9kRalJQ" WidthRequest="30"
+                               HeightRequest="30" Aspect="AspectFit"></Image>
+                        <Image Source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnLfAn36-LTYNHjioWgvu-0KUTIDDrW5lX_g" WidthRequest="30"
+                               HeightRequest="30" Aspect="AspectFit"></Image>
+                        <Image Source="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-icon-png-transparent-background-osteopathy-16.png" WidthRequest="30"
+                               HeightRequest="30" Aspect="AspectFit"></Image>
+                        <Image Source="https://cdn-icons-png.flaticon.com/512/174/174857.png" WidthRequest="30"
+                               HeightRequest="30" Aspect="AspectFit"></Image>
+                    </StackLayout>
+                    <Label Grid.Row="7" Text="Contraseña olvidada?" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"></Label>
+                    <Label Grid.Row="8" Margin="0,-10,0,0" Text="No tienes una cuenta? Registrate" HorizontalOptions="CenterAndExpand"></Label>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
 
 
 </ContentPage>
