@@ -1,30 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mochileros2App.Views.RegisterPage">
-
-    <StackLayout Padding="10" VerticalOptions="Center" BackgroundColor="Transparent">
-        <Label Text="Registrate en nuestra app" HorizontalOptions="Center" Margin="10" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource ButtonColor}" />
-
-        <Frame CornerRadius="20">
-            <StackLayout>
-                <Label Text="Nombre" FontSize="15" FontAttributes="Bold" TextColor="LightSlateGray" />
-                <Entry Placeholder="Ingrese su nombre" x:Name="nameEntry"  FontSize="15"  TextColor="LightSlateGray" />
-                <Label Text="Apellido" FontSize="15" FontAttributes="Bold" TextColor="LightSlateGray" />
-                <Entry x:Name="lastNameEntry" Placeholder="Ingrese su apellido" FontSize="15" TextColor="LightSlateGray" />
-                <Label Text="Correo Electronico" FontSize="15" TextColor="LightSlateGray" FontAttributes="Bold"/>
-                <Entry x:Name="emailEntry" Placeholder="Ingrese el correo" Keyboard="Email" TextColor="LightSlateGray" FontSize="15"/>
-                <Label Text="Telefono" FontSize="15" FontAttributes="Bold" TextColor="LightSlateGray"/>
-                <Entry x:Name="phoneEntry" Placeholder="Ingrese el telefono" Keyboard="Numeric" TextColor="LightSlateGray" FontSize="15"/>
-                <Label Text="Contraseña" FontSize="15" TextColor="LightSlateGray" FontAttributes="Bold"/>
-                <Entry x:Name="passwordEntry" Placeholder="Ingrese su contraseña" Keyboard="Text" IsPassword="True" FontSize="15" />
-                <Button Text="Registrar" BackgroundColor="{StaticResource ButtonColor}" TextColor="{StaticResource TextColorApp}" x:Name="registerSubmit" Clicked="registerSubmit_Clicked"/>
+             x:Class="Mochileros2App.Views.RegisterPage"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource AppSecondaryColor}"
+             Visual="Material">
 
 
-            </StackLayout>
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Margin="0,30" Source="logo.png" Aspect="AspectFit" HeightRequest="130" WidthRequest="80"></Image>
+            <Frame Grid.Row="1" Margin="0,0,0,-40" BorderColor="{StaticResource AppSecondaryColor}" HasShadow="True"  CornerRadius="50" HeightRequest="700">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="10" Padding="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"  Text="Mochileros App" FontSize="24" FontAttributes="Bold" TextColor="#1C375C" HorizontalOptions="CenterAndExpand"></Label>
+                    <Label Grid.Row="1" Margin="0,-15,0,0" Text="Registra tu cuenta" TextColor="{StaticResource AppSecondaryColor}"  HorizontalOptions="CenterAndExpand"></Label>
+                    <Entry Grid.Row="2" x:Name="nameEntry" Placeholder="Ingrese su nombre" Margin="2" FontSize="15"/>
+                    <Entry Grid.Row="3" x:Name="lastNameEntry" Placeholder="Ingrese su apellido" Margin="2" FontSize="15"/>
+                    <Entry Grid.Row="4" x:Name="emailEntry" Placeholder="Ingresa tu correo" Margin="2" FontSize="15"/>
+                    <Entry Grid.Row="5" x:Name="phoneEntry" Placeholder="Ingresa tu telefono" Keyboard="Numeric" Margin="2" FontSize="15"/>
+                    <Entry Grid.Row="6" x:Name="passwordEntry" Placeholder="Ingresa tu contraseña" IsPassword="True" FontSize="15"/>
+                    <Button Grid.Row="7" Text="Registrar" BackgroundColor="{StaticResource TextColorApp}" CornerRadius="20" x:Name="registerSubmit" Clicked="RegisterSubmit_Clicked"/>
 
-        </Frame>
 
 
-    </StackLayout>
+                    <Button Grid.Row="8" Margin="5" Text="Tienes una cuenta? Inicia sesion" HorizontalOptions="CenterAndExpand" x:Name="loginRedirect" Clicked="LoginRedirect_Clicked"></Button>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>

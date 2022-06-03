@@ -17,7 +17,7 @@ namespace Mochileros2App
         }
 
 
-        private async void register_Clicked(object sender, EventArgs e)
+        private async void RegisterRedirect_Clicked(object sender, EventArgs e)
         {
 
             await Navigation.PushAsync(new RegisterPage());
@@ -25,7 +25,7 @@ namespace Mochileros2App
 
         }
 
-        private async void login_Clicked(object sender, EventArgs e)
+        private async void Login_Clicked(object sender, EventArgs e)
         {
             // get user and pass
             var email = emailEntry.Text;

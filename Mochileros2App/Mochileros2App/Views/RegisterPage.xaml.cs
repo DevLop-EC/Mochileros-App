@@ -18,7 +18,12 @@ namespace Mochileros2App.Views
             InitializeComponent();
         }
 
-        private async void registerSubmit_Clicked(object sender, EventArgs e)
+        public async void LoginRedirect_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
+        }
+
+        private async void RegisterSubmit_Clicked(object sender, EventArgs e)
         {
             try
             {
