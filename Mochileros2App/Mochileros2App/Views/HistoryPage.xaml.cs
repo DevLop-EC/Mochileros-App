@@ -1,5 +1,6 @@
 ﻿using Mochileros2App.Data;
 using Mochileros2App.Models;
+using Mochileros2App.Views;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,12 @@ namespace Mochileros2App
             opinionListView.ItemsSource = opinions;
         }
 
+        private void opinionListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Opinions opinionSelected = (Opinions)e.SelectedItem;
+            Navigation.PushAsync(new EditPostPage(opinionSelected));
+
+        }
     }
 
 

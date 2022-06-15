@@ -7,7 +7,7 @@
     <ContentPage.Content>
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Label Text="COMENTARIOS" FontAttributes="Bold" TextColor="#08457E" Margin="20"></Label>
-            <ListView x:Name="opinionListView" HasUnevenRows="True" >
+            <ListView x:Name="opinionListView" HasUnevenRows="True" ItemSelected="opinionListView_ItemSelected" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

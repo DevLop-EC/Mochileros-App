@@ -9,7 +9,7 @@ namespace Mochileros2App.Data
 {
     public class DatabaseContext
     {
-        private readonly SQLiteAsyncConnection Connection;
+        public static SQLiteAsyncConnection Connection;
 
 
         public DatabaseContext(string path)
@@ -56,5 +56,20 @@ namespace Mochileros2App.Data
 
             return await opinions;
         }
+
+
+        public async Task<Opinions> UpdateOpinionsAsync(Opinions opinions)
+        {
+
+            if (opinions is null)
+            {
+                throw new ArgumentNullException(nameof(opinions));
+            }
+
+            return await Connection.UpdateAsync(opinions);
+        }
+
+
+
     }
 }
