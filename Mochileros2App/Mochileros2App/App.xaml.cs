@@ -22,7 +22,7 @@ namespace Mochileros2App
         private void InitialDatabase()
         {
             var folderApp = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            var dbPath = System.IO.Path.Combine(folderApp, "Mochileros2.db3");
+            var dbPath = System.IO.Path.Combine(folderApp, "Mochileros2.sqlite");
             Context = new DatabaseContext(dbPath);
         }
 

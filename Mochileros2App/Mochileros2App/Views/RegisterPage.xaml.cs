@@ -27,7 +27,7 @@ namespace Mochileros2App.Views
         {
             try
             {
-                var newUser = new Users
+                var newUser = new Auth
                 {
                     Name = nameEntry.Text,
                     LastName = lastNameEntry.Text,

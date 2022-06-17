@@ -38,6 +38,7 @@ namespace Mochileros2App
         {
             var opinions = await App.Context.GetOpinionsAsync();
             opinionListView.ItemsSource = opinions;
+
         }
 
         private void opinionListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

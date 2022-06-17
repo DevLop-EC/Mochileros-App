@@ -14,7 +14,7 @@ namespace Mochileros2App.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EditPostPage : ContentPage
     {
-        Opinions opinions;
+        readonly Opinions opinions;
         public EditPostPage(Opinions opinionsArg)
         {
             InitializeComponent();
@@ -22,15 +22,17 @@ namespace Mochileros2App.Views
             opinionEntry.Text = opinions.Opinion;
         }
 
-        private void UpdateClicked(object sender, EventArgs e, Opinions opinions)
+        private async void UpdateClicked(object sender, EventArgs e)
         {
-          
-
+            opinions.Opinion = opinionEntry.Text;
+            await App.Context.UpdateOpinionsAsync(opinions);
+            await Navigation.PopAsync();
         }
 
-        private void DeleteClicked(object sender, EventArgs e)
+        private async void DeleteClicked(object sender, EventArgs e)
         {
-
+            await App.Context.DeleteOpinionsAsync(opinions);
+            await Navigation.PopAsync();
         }
     }
 }

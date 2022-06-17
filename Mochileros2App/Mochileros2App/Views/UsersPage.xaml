@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mochileros2App.Views.UsersPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Label Text="USUARIOS" FontAttributes="Bold" TextColor="#08457E" Margin="20"></Label>
+            <ListView x:Name="UsersListView" HasUnevenRows="True" ItemSelected="UsersListView_ItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Padding="10">
+
+                                    <Frame HasShadow="True" BackgroundColor="White" CornerRadius="20">
+                                        <StackLayout Orientation="Vertical">
+                                            <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="#08457E"></Label>
+                                            <Label Text="{Binding Username}" FontAttributes="Bold" TextColor="#08457E"></Label>
+                                            <Label Text="{Binding Email}" FontAttributes="Bold" TextColor="#96A0A8"></Label>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

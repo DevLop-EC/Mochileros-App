@@ -14,12 +14,14 @@ namespace Mochileros2App.Data
 
         public DatabaseContext(string path)
         {
+
             Connection = new SQLiteAsyncConnection(path);
-            Connection.CreateTablesAsync<Users, Opinions>().Wait();
+            Connection.CreateTablesAsync<Auth, Opinions>().Wait();
+            Connection.CloseAsync();
 
         }
 
-        public async Task<int> RegisterUserAsync(Users user)
+        public async Task<int> RegisterUserAsync(Auth user)
         {
             return await Connection.InsertAsync(user);
         }
@@ -27,7 +29,7 @@ namespace Mochileros2App.Data
         // login user
         public async Task<bool> LoginUserAsync(string email, string password)
         {
-            var user = await Connection.Table<Users>().Where(u => u.Email == email && u.Password == password).FirstOrDefaultAsync();
+            var user = await Connection.Table<Auth>().Where(u => u.Email == email && u.Password == password).FirstOrDefaultAsync();
             if (user != null)
             {
                 return true;
@@ -54,11 +56,12 @@ namespace Mochileros2App.Data
                 throw new ArgumentNullException(nameof(opinions));
             }
 
+
             return await opinions;
         }
 
 
-        public async Task<Opinions> UpdateOpinionsAsync(Opinions opinions)
+        public async Task<int> UpdateOpinionsAsync(Opinions opinions)
         {
 
             if (opinions is null)
@@ -68,6 +71,17 @@ namespace Mochileros2App.Data
 
             return await Connection.UpdateAsync(opinions);
         }
+
+        public async Task<int> DeleteOpinionsAsync(Opinions opinions)
+        {
+            if (opinions is null)
+            {
+                throw new ArgumentNullException(nameof(opinions));
+            }
+
+            return await Connection.DeleteAsync(opinions);
+        }
+
 
 
 
