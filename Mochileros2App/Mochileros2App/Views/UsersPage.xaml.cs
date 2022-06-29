@@ -22,7 +22,7 @@ namespace Mochileros2App.Views
             GetApiUsers();
         }
 
-        public async void GetApiUsers()
+        private async Task<List<Users>> GetApiUsers()
         {
             var request = new HttpRequestMessage
             {
@@ -36,12 +36,13 @@ namespace Mochileros2App.Views
             {
                 string content = await response.Content.ReadAsStringAsync();
                 var resultado = JsonConvert.DeserializeObject<List<Users>>(content);
-
                 UsersListView.ItemsSource = resultado;
+                return resultado;
             }
             else
             {
                 await DisplayAlert("Error", "Error al conectar con el servidor", "Aceptar");
+                return null;
             }
         }
 
