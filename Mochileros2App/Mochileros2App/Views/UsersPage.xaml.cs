@@ -29,7 +29,7 @@ namespace Mochileros2App.Views
                 RequestUri = new Uri("https://jsonplaceholder.typicode.com/users"),
                 Method = HttpMethod.Get
             };
-            request.Headers.Add("Accpet", "application/json");
+            request.Headers.Add("Accept", "application/json");
             var client = new HttpClient();
             HttpResponseMessage response = await client.SendAsync(request);
             if (response.StatusCode == HttpStatusCode.OK)
