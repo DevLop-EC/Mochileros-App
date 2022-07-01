@@ -55,7 +55,7 @@ namespace Mochileros2App.Views
 
         private void UsersListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            
         }
     }
 }
