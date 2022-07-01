@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Mochileros2App.Helpers;
 
 namespace Mochileros2App.Views
 {
@@ -19,14 +20,20 @@ namespace Mochileros2App.Views
         public UsersPage()
         {
             InitializeComponent();
-            GetApiUsers();
+           
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            UsersListView.ItemsSource = await GetApiUsers();
         }
 
         private async Task<List<Users>> GetApiUsers()
         {
             var request = new HttpRequestMessage
             {
-                RequestUri = new Uri("https://jsonplaceholder.typicode.com/users"),
+                RequestUri = new Uri(Constants.URL_USERS),
                 Method = HttpMethod.Get
             };
             request.Headers.Add("Accept", "application/json");
@@ -36,7 +43,7 @@ namespace Mochileros2App.Views
             {
                 string content = await response.Content.ReadAsStringAsync();
                 var resultado = JsonConvert.DeserializeObject<List<Users>>(content);
-                UsersListView.ItemsSource = resultado;
+               
                 return resultado;
             }
             else
