@@ -17,16 +17,19 @@ namespace Mochileros2App.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UsersPage : ContentPage
     {
+
+        private List<Users> users;
         public UsersPage()
         {
             InitializeComponent();
-           
+
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            UsersListView.ItemsSource = await GetApiUsers();
+            users = await GetApiUsers();
+            UsersListView.ItemsSource = users;
         }
 
         private async Task<List<Users>> GetApiUsers()
@@ -43,7 +46,7 @@ namespace Mochileros2App.Views
             {
                 string content = await response.Content.ReadAsStringAsync();
                 var resultado = JsonConvert.DeserializeObject<List<Users>>(content);
-               
+
                 return resultado;
             }
             else
@@ -55,7 +58,24 @@ namespace Mochileros2App.Views
 
         private void UsersListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            
+
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            UsersListView.BeginRefresh();
+
+            if (string.IsNullOrWhiteSpace(e.NewTextValue))
+            {
+                UsersListView.ItemsSource = users;
+            }
+            else
+            {
+                UsersListView.ItemsSource = users.Where(x => x.Name.ToLower().Contains(e.NewTextValue.ToLower()));
+            }
+
+            UsersListView.EndRefresh();
         }
     }
 }

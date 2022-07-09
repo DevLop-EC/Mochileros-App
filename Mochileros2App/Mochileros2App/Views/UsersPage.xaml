@@ -4,7 +4,14 @@
              x:Class="Mochileros2App.Views.UsersPage">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <Label Text="USUARIOS" FontAttributes="Bold" TextColor="#08457E" Margin="20"></Label>
+
+
+            <Frame Padding="0,4,0,4" HasShadow="True" CornerRadius="25">
+                <SearchBar x:Name="searchBar"
+                       Placeholder="Buscar"
+                       TextChanged="SearchBar_TextChanged"  Keyboard="Chat" MaxLength="20" FontSize="15" HeightRequest="35" />
+            </Frame>
+
             <ListView x:Name="UsersListView" HasUnevenRows="True" ItemSelected="UsersListView_ItemSelected" >
                 <ListView.ItemTemplate>
                     <DataTemplate>

@@ -62,5 +62,7 @@ namespace Mochileros2App.Views
             UserApiPost user = (UserApiPost)e.SelectedItem;
             Navigation.PushAsync(new UserPostList(user));
         }
+
+
     }
 }
